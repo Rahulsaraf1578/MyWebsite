@@ -260,11 +260,11 @@ h1, h2, h3, h4, h5, h6 {
 # Hero Section
 --------------------------------------------------------------*/
 
-
+{%load static%}
 #hero {
   width: 100%;
   height: 100vh;
-    background: url("static/assets/img/n.png") top right no-repeat;
+    background: url("../img/n.png") top right no-repeat;
   background-size: cover;
   position: relative;
 }
