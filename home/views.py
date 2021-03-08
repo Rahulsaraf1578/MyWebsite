@@ -9,12 +9,14 @@ def index(request):
         email = request.POST['email']
         subject = request.POST['subject']
         message = request.POST['message']
+        print(name,email,message,subject)
 
         send_mail(
             'message from ' + name,
-            message,
+            message+"\n"+email,
             email,
             ['rahulsaraf1578@gmail.com'],
+            fail_silently=False
         )
         return render(request, 'index.html', {'name': name})
     else:
