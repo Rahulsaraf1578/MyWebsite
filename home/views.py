@@ -4,11 +4,14 @@ from django.core.mail import send_mail
 
 # Create your views here.
 def index(request):
+    return render(request,'index.html')
+
+def contact(request):
     if request.method == "POST":
         name = request.POST['name']
         email = request.POST['email']
         subject = request.POST['subject']
-        message = request.POSt['message']
+        message = request.POST['message']
 
         send_mail(
             'message from ' + name,
@@ -16,9 +19,6 @@ def index(request):
             email,
             ['rahulsaraf1578@gmail.com'],
         )
-        return render(request,'index.html',{'name': name})
+        return render(request, 'index.html', {'name': name})
     else:
-        return render(request,'index.html',{})
-
-def contact(request):
-    return render(request,'contact.html')
+        return render(request, 'index.html', {})
