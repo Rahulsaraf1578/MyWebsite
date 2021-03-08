@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'umk28)dgvzqo))3#0w!3pf3=wp=8ubsz*ecfn912fchyon=+6%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['rahulsaraf.herokuapp.com','127.0.0.1']
 
@@ -131,5 +131,13 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
+
+# Email setting
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'rahulsaraf484@gmail.com'
+EMAIL_HOST_PASSWORD = 'rahul1578'
+EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False
 
 django_heroku.settings(locals())
